@@ -2,7 +2,8 @@
 import { ChangeEvent, useState } from "react";
 
 export default function Home() {
-  const [userId, setUserId] = useState<string | any>();
+  const [userId, setUserId] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   return (
     <div className="flex justify-center items-center bg-black min-h-screen text-gray-200">
@@ -19,7 +20,7 @@ export default function Home() {
           <Input
             placeholder="Password"
             type="password"
-            onChange={(e) => setUserId(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="flex justify-center items-center p-4">
@@ -37,16 +38,14 @@ export default function Home() {
             className="h-4"
           />
         </div>
-        <p>
-          <div className="flex justify-center items-center text-xs text-gray-600">
-            <div className="w-[80%]">
-              Zerodha Broking Limited: Member of NSE, BSE ‐ SEBI Reg. no.
-              INZ000031633, CDSL ‐ SEBI Reg. no. IN-DP-431-2019 | Zerodha
-              Commodities Pvt. Ltd.: MCX ‐ SEBI Reg. no. INZ000038238 | Smart
-              Online Dispute Resolution | SEBI SCORES
-            </div>
+        <div className="flex justify-center items-center text-xs text-gray-600">
+          <div className="w-[80%]">
+            Zerodha Broking Limited: Member of NSE, BSE ‐ SEBI Reg. no.
+            INZ000031633, CDSL ‐ SEBI Reg. no. IN-DP-431-2019 | Zerodha
+            Commodities Pvt. Ltd.: MCX ‐ SEBI Reg. no. INZ000038238 | Smart
+            Online Dispute Resolution | SEBI SCORES
           </div>
-        </p>
+        </div>
       </div>
     </div>
   );
