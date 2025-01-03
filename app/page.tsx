@@ -1,5 +1,7 @@
 "use client";
+
 import { ChangeEvent, useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const [userId, setUserId] = useState<string>("");
@@ -24,7 +26,7 @@ export default function Home() {
   return (
     <div className="flex justify-center items-center bg-black min-h-screen text-gray-200">
       <div className="rounded-lg shadow-lg w-96 bg-gray-900">
-        <div className="flex flex-col justify-center items-center font-lightweight text-2xl p-6 text-gray-200">
+        <div className="flex flex-col justify-center items-center font-light text-2xl p-6 text-gray-200">
           Login to kite
         </div>
         <div>
@@ -55,10 +57,12 @@ export default function Home() {
           <button>Forgot user ID or password?</button>
         </div>
         <div className="flex justify-center items-center p-2">
-          <img
+          <Image
             src="https://cdn.brandfetch.io/idZmHUWU0C/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
             alt="Zerodha Logo"
             className="h-4"
+            width={64}
+            height={16}
           />
         </div>
         <div className="flex justify-center items-center text-xs text-gray-600">
