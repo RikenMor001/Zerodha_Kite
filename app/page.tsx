@@ -17,7 +17,6 @@ export default function Home() {
     setErrors(newErrors);
 
     if (!newErrors.userId && !newErrors.password) {
-      // Proceed with login logic
       console.log("Logging in...");
     }
   };
