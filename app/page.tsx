@@ -28,17 +28,22 @@ export default function Home() {
           </button>
         </div>
         <div className="flex justify-center items-center text-sm text-gray-500 hover:text-orange-600 mb-6">
-          <button>
-          Forgot user ID or password?
-          </button>        
+          <button>Forgot user ID or password?</button>
         </div>
-        <div className="flex justify-center font-semibold text-gray-200 p-2">
-          Zerodha 
+        <div className="flex justify-center items-center p-2">
+          <img
+            src="https://cdn.brandfetch.io/idZmHUWU0C/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+            alt="Zerodha Logo"
+            className="h-4"
+          />
         </div>
         <p>
           <div className="flex justify-center items-center text-xs text-gray-600">
             <div className="w-[80%]">
-            Zerodha Broking Limited: Member of NSE, BSE ‐ SEBI Reg. no. INZ000031633, CDSL ‐ SEBI Reg. no. IN-DP-431-2019 | Zerodha Commodities Pvt. Ltd.: MCX ‐ SEBI Reg. no. INZ000038238 | Smart Online Dispute Resolution | SEBI SCORES  
+              Zerodha Broking Limited: Member of NSE, BSE ‐ SEBI Reg. no.
+              INZ000031633, CDSL ‐ SEBI Reg. no. IN-DP-431-2019 | Zerodha
+              Commodities Pvt. Ltd.: MCX ‐ SEBI Reg. no. INZ000038238 | Smart
+              Online Dispute Resolution | SEBI SCORES
             </div>
           </div>
         </p>
