@@ -61,8 +61,8 @@ export default function Home() {
             src="https://cdn.brandfetch.io/idZmHUWU0C/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
             alt="Zerodha Logo"
             className="h-4"
-            width={64}
-            height={16}
+            width={90}
+            height={25}
           />
         </div>
         <div className="flex justify-center items-center text-xs text-gray-600">
