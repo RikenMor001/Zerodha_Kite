@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="flex justify-center items-center bg-slate-900 min-h-screen text-gray-200">
-      <div className="rounded-lg shadow-2xl w-96 bg-gray-900">
+      <div className="rounded-lg shadow-xl w-96 bg-gray-900 border border-gray-900">
         <div className="flex flex-col justify-center items-center font-light text-2xl p-6 text-gray-200">
           Login to kite
         </div>
