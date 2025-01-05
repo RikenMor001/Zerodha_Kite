@@ -114,7 +114,7 @@ export function Input({
           error ? "border-red-500" : "border-gray-700"
         }`}
         placeholder={placeholder}
-        type={type}
+        type={isVisible ? "text": "password"}
         value={value}
         onChange={onChange}
       />
