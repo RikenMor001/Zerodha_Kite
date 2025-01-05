@@ -1,6 +1,7 @@
 
 import { PrismaClient } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
+import bcrypt from "bcrypt";
 
 const prisma = new PrismaClient();
 export default async function POST(req: NextRequest){
@@ -15,4 +16,10 @@ export default async function POST(req: NextRequest){
             error: "User not found"
         })
     }
+    
+    // const hashedPassword = await bcrypt.hash(password, 10);
+
+        
+
+    
 }
