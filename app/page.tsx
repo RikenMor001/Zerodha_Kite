@@ -48,7 +48,7 @@ export default function Home() {
         <div className="flex justify-center items-center p-4">
           <button
             className="w-80 bg-orange-500 text-white py-2 rounded hover:bg-orange-600 shadow-lg"
-            onClick={handleLogin}
+            onClick={ handleLogin }
           >
             Login
           </button>
@@ -102,3 +102,4 @@ export function Input({ placeholder, type, value, onChange, error }: LoginProps)
     </div>
   );
 }
+
