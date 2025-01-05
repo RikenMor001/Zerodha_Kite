@@ -47,7 +47,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center items-center p-4">
           <button
-            className="w-80 bg-orange-500 text-white py-2 rounded hover:bg-orange-600"
+            className="w-80 bg-orange-500 text-white py-2 rounded hover:bg-orange-600 shadow-lg"
             onClick={handleLogin}
           >
             Login
@@ -66,7 +66,7 @@ export default function Home() {
           />
         </div>
         <div className="flex justify-center items-center text-xs text-gray-600">
-          <div className="w-[80%]">
+          <div className="w-[80%] mb-5">
             Zerodha Broking Limited: Member of NSE, BSE ‐ SEBI Reg. no.
             INZ000031633, CDSL ‐ SEBI Reg. no. IN-DP-431-2019 | Zerodha
             Commodities Pvt. Ltd.: MCX ‐ SEBI Reg. no. INZ000038238 | Smart
@@ -90,7 +90,7 @@ export function Input({ placeholder, type, value, onChange, error }: LoginProps)
   return (
     <div className="flex flex-col justify-center items-center p-3">
       <input
-        className={`flex w-80 rounded-md border text-md px-5 py-3 bg-gray-900 justify-center items-center ${
+        className={`flex w-80 rounded-md border text-md px-5 py-3 bg-gray-900 justify-center items-center shadow-lg ${
           error ? "border-red-500" : "border-gray-700"
         }`}
         placeholder={placeholder}
