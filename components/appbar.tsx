@@ -10,7 +10,7 @@ export default function AppBar() {
   const userInitial = userId[0];
 
   return (
-    <div className="border-b shadow-xl p-6 flex bg-neutral-900 border-b-slate-800 justify-between items-center">
+    <div className="border-b shadow-xl p-3 flex bg-neutral-900 border-b-slate-800 justify-between items-center">
       <div className="flex text-sm font-semibold relative">
         <div className="flex space-x-3 ml-32">
           <div className="text-white">
@@ -32,10 +32,10 @@ export default function AppBar() {
             </button>
           </div>
           <div className="text-red-500">
-            {sensexPrice}
+            { sensexPrice } 
           </div>
           <div className="text-gray-600 text-xs">
-            {numberChangeSensex} (-0.90%)
+            { numberChangeSensex } (-0.90%)
           </div>
         </div>
         <div className="border-l text-white ml-2 shadow-xl border-slate-800 flex space-x-9">
