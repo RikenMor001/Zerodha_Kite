@@ -3,6 +3,7 @@
 import { ChangeEvent, useState } from "react";
 import Image from "next/image";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/16/solid";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [ userId, setUserId ] = useState<string>("");
@@ -12,6 +13,7 @@ export default function Home() {
     userId: "",
     password: "",
   });
+  const router = useRouter();   
 
   const handleLogin = () => {
     const newErrors = {
@@ -22,6 +24,7 @@ export default function Home() {
 
     if (!newErrors.userId && !newErrors.password) {
       console.log("Logging in...");
+      router.push("/dashboard");
     }
   };
 
@@ -109,7 +112,7 @@ export function Input({
     <div className="flex flex-col justify-center items-center p-3">
       <div className="relative w-80">
       <input
-        className={`flex w-full rounded-md border text-md px-5 py-3 bg-gray-900 justify-center items-center shadow-lg ${
+        className={`flex w-full rounded-md border text-md px-5 py-3 bg-neutral-900 justify-center items-center shadow-lg ${
           error ? "border-red-500" : "border-gray-700"
         }`}
         placeholder={placeholder}
@@ -118,10 +121,10 @@ export function Input({
         onChange={onChange}
       />
 
-      {showToggle && (
+      { showToggle && (
         <button
         type = 'button'
-        onClick={toggleVisibility}
+        onClick={ toggleVisibility } 
         className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-300"
         >
           { isVisible ? (
