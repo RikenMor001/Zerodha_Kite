@@ -1,5 +1,5 @@
-import AppBar from "../components/appbar";
 
+import AppBar from "../components/appbar";
 
 export default function dashboard(){
     return <div>
