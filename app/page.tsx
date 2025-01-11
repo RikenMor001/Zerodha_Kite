@@ -33,7 +33,7 @@ export default function Home() {
         });
         if (response.status === 201) {
           setMessage("User created successfully!");
-          router.push("/dashboard");
+          router.push("/signin");
         } else {
           setMessage(response.data.error);
         }
