@@ -24,7 +24,7 @@ export default function Home() {
 
     if (!newErrors.password) {
       try {
-        const response = await axios.post("/api/signin", {
+        const response = await axios.post("../api/signin", {
           password: password,
         });
         if (response.status === 201) {
