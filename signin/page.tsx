@@ -40,13 +40,17 @@ export default function Home() {
     }
   };
 
+  const takeUserToSignin = () => {
+    router.push("/signin")
+  }
+
   return (
     <div className="flex justify-center items-center bg-neutral-900 min-h-screen text-gray-200">
       <div className="rounded-lg shadow-xl w-96 bg-neutral-900 border border-neutral-800">
         <div className="flex flex-col justify-center items-center font-light text-2xl p-6 text-gray-200">
         <div className="flex items-center space-x-2 text-white">
         <div className="bg-orange-600 rounded-full w-16 h-16 flex items-center justify-center text-lg mb-3">
-          <button>
+          <button onClick={ takeUserToSignin }>
             { userIdName }
           </button>
         </div>
@@ -69,7 +73,7 @@ export default function Home() {
         <div className="flex justify-center items-center p-4">
           <button
             className="w-80 bg-orange-600 text-white py-2 rounded hover:bg-orange-800 shadow-lg"
-            onClick={ handleSignup }
+            onClick = { handleSignup }
           >
             Login
           </button>
@@ -138,7 +142,7 @@ export function Input({
         {showToggle && (
           <button
             type="button"
-            onClick={toggleVisibility}
+            onClick={ toggleVisibility }
             className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-300"
           >
             {isVisible ? (
