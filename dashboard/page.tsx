@@ -4,8 +4,15 @@ import AppBar from "../components/appbar";
 export default function dashboard(){
     return <div>
         <AppBar/>
-        <div className="flex justify-center items-center min-h-screen bg-neutral-900 text-white">
-            Dashboard coming up soon...
+        <div className="min-h-screen bg-neutral-900">
+            <div className="grid grid-cols-[35%_65%] gap-4 p-4 text-white">
+                <div className="border-r border-neutral-800">
+                    Search bar coming soon...
+                </div>
+                <div className="text-white">
+                    hello there 
+                </div>
+            </div>
         </div>
     </div>
 }
