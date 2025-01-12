@@ -44,13 +44,17 @@ export default function Home() {
     }
   };
 
+  const takeUserToSignup = () => {
+    router.push("/")
+  }
+
   return (
     <div className="flex justify-center items-center bg-neutral-900 min-h-screen text-gray-200">
       <div className="rounded-lg shadow-xl w-96 bg-neutral-900 border border-neutral-800">
         <div className="flex flex-col justify-center items-center font-light text-2xl p-6 text-gray-200">
         <div className="flex items-center space-x-2 text-white">
         <div className="bg-orange-600 rounded-full w-16 h-16 flex items-center justify-center text-lg mb-3">
-          <button>
+          <button onClick={ takeUserToSignup }>
             { userIdName }
           </button>
         </div>
