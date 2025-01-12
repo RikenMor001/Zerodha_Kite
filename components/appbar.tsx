@@ -10,7 +10,7 @@ export default function AppBar() {
   const userInitial = userId[0];
 
   return (
-    <div className="border-b shadow-xl p-3 flex bg-neutral-900 border-b-slate-800 justify-between items-center">
+    <div className="border-b shadow-4xl p-3 flex bg-neutral-900 border-b-neutral-800 justify-between items-center">
       <div className="flex text-sm font-semibold relative">
         <div className="flex space-x-3 ml-32">
           <div className="text-white">
