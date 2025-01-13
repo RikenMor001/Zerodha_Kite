@@ -80,6 +80,7 @@ export default function Home() {
             toggleVisibility={() => setTogglePassword((prev) => !prev)}
             isVisible={togglePassword}
           />
+          
         </div>
         <div className="flex justify-center items-center p-4">
           <button
