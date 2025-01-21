@@ -47,7 +47,7 @@ export default function AppBar() {
         </div>
 
         <div className="border-l text-white ml-2 border-slate-800 flex space-x-9">
-          <div className="text-blue-500 ml-20">
+          <div className="text-orange-500 ml-20 font-semibold">
             <button onClick={ takeUserToDashboard }>
               Zerodha
             </button>
