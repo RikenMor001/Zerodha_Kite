@@ -3,10 +3,10 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function AppBar() {
-  const [niftyPrice] = useState<number>(24004.75);
-  const [sensexPrice] = useState<number>(79223.11);
-  const [numberChangeNifty] = useState<number>(-183.9);
-  const [numberChangeSensex] = useState<number>(-720.6);
+  const [ niftyPrice ] = useState<number>(24004.75);
+  const [ sensexPrice ] = useState<number>(79223.11);
+  const [ numberChangeNifty ] = useState<number>(-183.9);
+  const [ numberChangeSensex ] = useState<number>(-720.6);
   const userId = "HPD412";
   const userInitial = userId[0];
   const router = useRouter();
@@ -64,11 +64,11 @@ export default function AppBar() {
         
       </div>
       <div className="flex items-center space-x-2 text-white">
-        <div className="bg-orange-500 rounded-full w-8 h-8 flex items-center justify-center text-lg">
+        <div className="bg-orange-500 rounded-full w-6 h-6 flex items-center justify-center text-sm">
           { userInitial }
         </div>
         <div>
-            <button>
+            <button className='text-sm hover:text-orange-500 hover:underline'>
                 { userId }
             </button>
         </div>
