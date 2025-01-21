@@ -27,7 +27,7 @@ export function Input({placeholder, type, onChange}: searchBarProps){
         placeholder={ placeholder}   
         type={ type } 
         onChange={ onChange }
-        className="bg-neutral-900 w-full rounded-lg border text-md px-5 py-3 shadow-lg border-gray-800 placeholder-slate-600 text-gray-200"
+        className="bg-neutral-900 w-full rounded-lg border text-md px-5 py-3 shadow-lg border-neutral-800 placeholder-neutral-600 text-neutral-100" 
         />  
     </div>
 }
