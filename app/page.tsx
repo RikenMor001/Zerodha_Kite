@@ -53,7 +53,7 @@ export default function Home() {
       <div className="rounded-lg shadow-xl w-96 bg-neutral-900 border border-neutral-800">
         <div className="flex flex-col justify-center items-center font-light text-2xl p-6 text-gray-200">
         <div className="flex items-center space-x-2 text-white">
-        <div className="bg-orange-600 rounded-full w-16 h-16 flex items-center justify-center text-lg mb-3">
+        <div className="bg-orange-700 rounded-full w-16 h-16 flex items-center justify-center text-lg mb-3">
           <button onClick={ takeUserToSignup }>
             { userIdName }
           </button>
@@ -84,7 +84,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center items-center p-4">
           <button
-            className="w-80 bg-orange-600 text-white py-2 rounded hover:bg-orange-800 shadow-lg"
+            className="w-80 bg-orange-700 text-white py-2 rounded hover:bg-orange-800 shadow-lg border-neutral-800"
             onClick={handleSignup}
           >
             Signup
@@ -92,7 +92,7 @@ export default function Home() {
         </div>
         {message && (
           <div className="flex justify-center items-center text-sm text-red-500 mb-6">
-            {message}
+            { message }
           </div>
         )}
         <div className="flex justify-center items-center p-2">
@@ -143,7 +143,7 @@ export function Input({
       <div className="relative w-80">
         <input
           className={`flex w-full rounded-md border text-md px-5 py-3 bg-neutral-900 justify-center items-center shadow-lg ${
-            error ? "border-red-500" : "border-gray-700"
+            error ? "border-red-500" : "border-neutral-800"
           }`}
           placeholder={placeholder}
           type={type}
