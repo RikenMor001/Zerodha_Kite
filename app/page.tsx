@@ -53,7 +53,7 @@ export default function Home() {
       <div className="rounded-lg shadow-xl w-96 bg-neutral-900 border border-neutral-800">
         <div className="flex flex-col justify-center items-center font-light text-2xl p-6 text-gray-200">
         <div className="flex items-center space-x-2 text-white">
-        <div className="bg-orange-700 rounded-full w-16 h-16 flex items-center justify-center text-lg mb-3">
+        <div className="bg-orange-500 rounded-full w-16 h-16 flex items-center justify-center text-lg mb-3">
           <button onClick={ takeUserToSignup }>
             { userIdName }
           </button>
@@ -84,7 +84,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center items-center p-4">
           <button
-            className="w-80 bg-orange-700 text-white py-2 rounded hover:bg-orange-800 shadow-lg border-neutral-800"
+            className="w-80 bg-orange-500 text-white py-2 rounded hover:bg-orange-800 shadow-lg border-neutral-800"
             onClick={handleSignup}
           >
             Signup
