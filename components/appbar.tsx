@@ -16,7 +16,7 @@ export default function AppBar() {
   }
 
   return (
-    <div className="border-b shadow-4xl p-2 flex bg-neutral-900 border-b-neutral-800 justify-between items-center">
+    <div className="border-b shadow-4xl p-3 flex bg-neutral-900 border-b-neutral-800 justify-between items-center">
       <div className="flex text-sm relative">
         <div className="flex space-x-3 ml-32">
           <div className="text-white">
