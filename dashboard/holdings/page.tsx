@@ -5,7 +5,7 @@ import AppBar from "@/app/components/appbar";
 import Recommendations from "@/app/components/recommendations";
 import SearchBar from "@/app/components/searchBar";
 
-export default function dashboard(){
+export default function Holdings(){
     return <div>
         <AppBar/>
         <div className="min-h-screen bg-neutral-900">
@@ -16,10 +16,10 @@ export default function dashboard(){
                 </div>
                 <div>
                     <div className="text-white ml-5 font-semibold text-2xl border-b border-b-neutral-800 shadow-md p- ">
-                        Holding page
+                        Holding
                     </div>
                     <div className="text-white flex justify-center items-center min-h-screen">
-                        User holdings will be shown here
+                        Holdings page
                     </div>
                 </div>
             </div>
