@@ -15,6 +15,26 @@ export default function AppBar() {
     router.push("/dashboard")
   }
 
+  const takeUserToBids = () => {
+    router.push("/dashboard/bids")
+  }
+
+  const takeUserToFunds = () => {
+    router.push("/dashboard/funds")
+  }
+
+  const takeUserToOrders = () => {
+    router.push("/dashboard/orders")
+  }
+
+  const takeUserToPositions = () => {
+    router.push("/dashboard/positions")
+  }
+
+  const takeUserToHolding = () => {
+    router.push("/dashboard/holdings")
+  }
+
   return (
     <div className="border-b shadow-4xl p-3 flex bg-neutral-900 border-b-neutral-800 justify-between items-center">
       <div className="flex text-sm relative">
@@ -53,12 +73,12 @@ export default function AppBar() {
             </button>
           </div>
           <div className="flex space-x-9">
-            <button className="hover:text-orange-500 hover:underline">Dashboard</button>
-            <button className="hover:text-orange-500 hover:underline">Orders</button>
-            <button className="hover:text-orange-500 hover:underline">Holdings</button>
-            <button className="hover:text-orange-500 hover:underline">Positions</button>
-            <button className="hover:text-orange-500 hover:underline">Bids</button>
-            <button className="hover:text-orange-500 hover:underline">Funds</button>
+            <button className="hover:text-orange-500 hover:underline" onClick={ takeUserToDashboard }>Dashboard</button>
+            <button className="hover:text-orange-500 hover:underline" onClick={ takeUserToOrders }>Orders</button>
+            <button className="hover:text-orange-500 hover:underline" onClick={ takeUserToHolding }>Holdings</button>
+            <button className="hover:text-orange-500 hover:underline" onClick={ takeUserToPositions }>Positions</button>
+            <button className="hover:text-orange-500 hover:underline" onClick={ takeUserToBids }>Bids</button>
+            <button className="hover:text-orange-500 hover:underline" onClick={ takeUserToFunds }>Funds</button>
           </div>
         </div>
         
