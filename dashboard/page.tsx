@@ -19,7 +19,7 @@ export default function dashboard(){
                         Dashboard
                     </div>
                     <div className="text-white flex justify-center items-center min-h-screen">
-                        here is where all the contact will go 
+                        Dashboard page 
                     </div>
                 </div>
             </div>
