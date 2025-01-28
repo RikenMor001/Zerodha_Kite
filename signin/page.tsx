@@ -95,7 +95,7 @@ export default function Home() {
             { message }
           </div>
         )}
-        <div className="flex justify-center items-center p-2">
+        <div className="flex justify-center items-center p-4">
           <Image
             src="https://cdn.brandfetch.io/idZmHUWU0C/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
             alt="Zerodha Logo"
@@ -103,14 +103,6 @@ export default function Home() {
             width={110}
             height={10}
           />
-        </div>
-        <div className="flex justify-center items-center text-xs text-gray-600">
-          <div className="w-[80%] mb-5">
-            Zerodha Broking Limited: Member of NSE, BSE ‐ SEBI Reg. no.
-            INZ000031633, CDSL ‐ SEBI Reg. no. IN-DP-431-2019 | Zerodha
-            Commodities Pvt. Ltd.: MCX ‐ SEBI Reg. no. INZ000038238 | Smart
-            Online Dispute Resolution | SEBI SCORES
-          </div>
         </div>
       </div>
     </div>
