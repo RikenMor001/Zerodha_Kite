@@ -31,7 +31,7 @@ export default function Home() {
           email: userId,
           password: password,
         });
-        if (response.status === 201) {
+        if (response.status === 200) {
           setMessage("User logged in successfully!");
           router.push("/dashboard");
         } else {
