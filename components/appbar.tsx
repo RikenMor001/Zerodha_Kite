@@ -4,10 +4,10 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function AppBar() {
-  const [niftyPrice] = useState(23000.75);
-  const [sensexPrice] = useState(79273.11);
-  const [numberChangeNifty] = useState(-143.9);
-  const [numberChangeSensex] = useState(-710.6);
+  const [niftyPrice] = useState(24000.75);
+  const [sensexPrice] = useState(79245.11);
+  const [numberChangeNifty] = useState(-243.9);
+  const [numberChangeSensex] = useState(-810.6);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const userId = "HPD412";
   const userInitial = userId[0];
