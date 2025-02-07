@@ -18,16 +18,16 @@ export default function dashboard(){
                     <SearchBar/>
                     <Recommendations/>
                 </div>
-                <div>
-                    <div className="text-white ml-5 font-semibold text-2xl border-b border-b-neutral-800 shadow-md p- ">
-                        Dashboard
-                    </div>
-                    <div className=" font-semibold text-2xl ml-4 mt-5">
-                        <div className="text-neutral-500 text-sm">
-                            Account Balance
+                <div className="flex-1 p-5">
+                    <div className="text-white text-2xl font-bold mb-4">Dashboard</div>
+                    <div className="grid grid-cols-2 gap-6">
+                        <div className="bg-neutral-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+                            <div className="text-neutral-400 text-sm">Account Balance</div>
+                            <div className="text-white text-3xl font-semibold mt-2">₹{accountBalance}</div>
                         </div>
-                        <div className="text-white text-2xl">
-                            { accountBalance }
+                        <div className="bg-neutral-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+                            <div className="text-neutral-400 text-sm">Holdings</div>
+                            <div className="text-white text-2xl mt-2">15 Stocks</div>
                         </div>
                     </div>
                 </div>
