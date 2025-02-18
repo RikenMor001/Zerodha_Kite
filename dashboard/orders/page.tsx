@@ -19,8 +19,11 @@ export default function Orders(){
                     <div className="text-white ml-5 font-semibold text-2xl border-b border-b-neutral-800 shadow-md p- ">
                         Orders
                     </div>
-                    <div className="text-white text-gray-400 flex justify-center min-h-screen text-sm items-center">
-                        You haven't placed any orders today 
+                    <div className="text-gray-400 flex flex-col justify-center min-h-screen text-sm items-center">
+                        <p>You haven't placed any orders today</p>
+                        <button className="mt-2 border border-black py-2 px-6 rounded-md bg-blue-600 text-white">
+                            Get started
+                        </button> 
                     </div>
                 </div>
             </div>
