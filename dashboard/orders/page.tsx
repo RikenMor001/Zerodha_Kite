@@ -6,6 +6,7 @@ import Recommendations from "@/app/components/recommendations";
 import SearchBar from "@/app/components/searchBar";
 
 export default function Orders(){
+
     return <div>
         <AppBar/>
         <div className="min-h-screen bg-neutral-900">
@@ -18,8 +19,8 @@ export default function Orders(){
                     <div className="text-white ml-5 font-semibold text-2xl border-b border-b-neutral-800 shadow-md p- ">
                         Orders
                     </div>
-                    <div className="text-white flex justify-center items-center min-h-screen">
-                        Orders page
+                    <div className="text-white text-gray-400 flex justify-center min-h-screen text-sm items-center">
+                        You haven't placed any orders today 
                     </div>
                 </div>
             </div>
