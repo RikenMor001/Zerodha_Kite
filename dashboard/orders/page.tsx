@@ -6,7 +6,9 @@ import Recommendations from "@/app/components/recommendations";
 import SearchBar from "@/app/components/searchBar";
 
 export default function Orders(){
-
+    const openSearchBarToSearchStocks = () => {
+           
+    }
     return <div>
         <AppBar/>
         <div className="min-h-screen bg-neutral-900">
@@ -20,8 +22,8 @@ export default function Orders(){
                         Orders
                     </div>
                     <div className="text-gray-400 flex flex-col justify-center min-h-screen text-sm items-center">
-                        <p>You haven't placed any orders today</p>
-                        <button className="mt-2 border border-black py-2 px-6 rounded-md bg-blue-600 text-white">
+                        <p> You haven't placed any orders today </p>
+                        <button className="mt-2 border border-black py-2 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white">
                             Get started
                         </button> 
                     </div>
