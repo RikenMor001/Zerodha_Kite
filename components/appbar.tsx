@@ -27,12 +27,12 @@ export default function AppBar() {
         <div className="flex space-x-3 ml-32">
           <div className="text-white font-semibold">NIFTY 50</div>
           <div className="text-red-500">{niftyPrice}</div>
-          <div className="text-gray-600 text-xs">{numberChangeNifty} (-0.76%)</div>
+          <div className="text-gray-400 text-xs">{numberChangeNifty} (-0.76%)</div>
         </div>
         <div className="flex space-x-3 ml-10">
           <div className="text-white font-semibold">SENSEX</div>
           <div className="text-red-500">{sensexPrice}</div>
-          <div className="text-gray-600 text-xs">{numberChangeSensex} (-0.90%)</div>
+          <div className="text-gray-400 text-xs">{numberChangeSensex} (-0.90%)</div>
         </div>
         <div className="border-l text-white ml-2 border-neutral-800 flex space-x-9">
           <div className="text-orange-500 ml-20 font-semibold">
