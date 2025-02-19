@@ -26,8 +26,8 @@ export default function Orders(){
                             Get started
                         </button> 
                         {dropDown && (
-                            <div>
-                                Search your stocks here    
+                            <div className="border border-neutral-700 shadow-lg rounded-xl p-4 mt-2">
+                                Search your stock here    
                             </div>
                         )}
                     </div>
