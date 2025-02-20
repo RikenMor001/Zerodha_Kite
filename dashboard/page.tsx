@@ -21,17 +21,17 @@ export default function dashboard(){
                 <div className="flex-1 p-5">
                     <div className="text-white text-2xl font-bold mb-4">Dashboard</div>
                     <div className="grid grid-cols-2 gap-6">
-                        <div className="bg-neutral-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+                        <div className="bg-neutral-800 p-1 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
                             <div className="text-neutral-400 text-sm">Account Balance</div>
-                            <div className="text-white text-3xl font-semibold mt-2">₹{accountBalance}</div>
+                            <div className="text-white text-xl font-semibold mt-2">₹{accountBalance}</div>
                         </div>
-                        <div className="bg-neutral-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
+                        <div className="bg-neutral-800 p-1 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center">
                             <div className="text-neutral-400 text-sm">Holdings</div>
-                            <div className="text-white text-2xl mt-2">15 Stocks</div>
+                            <div className="text-white text-xl mt-2">15 Stocks</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 }
