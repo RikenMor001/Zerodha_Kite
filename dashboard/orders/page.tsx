@@ -26,13 +26,36 @@ export default function Orders(){
                             Get started
                         </button> 
                         {dropDown && (
-                            <div className="bg-neutral-800 rounded-lg py-3 px-3 mt-3">
-                                Search your stock here    
-                            </div>
+                            <div>
+                                <Dropdown
+                                type="text"
+                                placeholder="Search a stock"
+                                onChange={(e: any) => console.log(e.target.value)}
+                                />
+                            </div>   
                         )}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+}
+
+
+interface DropDownStocksProps{
+    type: string,
+    placeholder: string,
+    onChange: (e: any) => void
+}
+
+export const Dropdown = ({type, placeholder, onChange}: DropDownStocksProps) => {
+    return <div>
+        <input 
+        type={ type } 
+        placeholder={ placeholder }
+        className="border border-neutral-800 rounded-md py-3 px-3 mt-3 w-full bg-neutral-800" 
+        onChange={ onChange }
+        >    
+        </input>
+    </div>      
 }
