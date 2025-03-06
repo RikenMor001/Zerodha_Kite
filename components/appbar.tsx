@@ -25,12 +25,12 @@ export default function AppBar() {
     <div className="border-b shadow-4xl p-3 flex bg-neutral-900 border-b-neutral-800 justify-between items-center">
       <div className="flex text-sm relative">
         <div className="flex space-x-3 ml-32">
-          <div className="text-white font-semibold">NIFTY 50</div>
+          <div className="text-white font-semibold"> <button> NIFTY 50 </button></div>
           <div className="text-red-500">{niftyPrice}</div>
           <div className="text-gray-400 text-xs">{numberChangeNifty} (-0.76%)</div>
         </div>
         <div className="flex space-x-3 ml-10">
-          <div className="text-white font-semibold">SENSEX</div>
+          <div className="text-white font-semibold"><button> SENSEX </button></div>
           <div className="text-red-500">{sensexPrice}</div>
           <div className="text-gray-400 text-xs">{numberChangeSensex} (-0.90%)</div>
         </div>
