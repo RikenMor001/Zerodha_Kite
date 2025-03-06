@@ -22,11 +22,11 @@ export default function Orders(){
                     </div>
                     <div className="text-gray-400 flex flex-col justify-center min-h-screen text-sm items-center">
                         <p> You haven't placed any orders today </p>
-                        <button className="mt-2 border border-black py-2 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white" onClick={ () => setDropDownOpen( !dropDown )}> 
+                        <button className="mt-2 border border-black py-3 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white" onClick={ () => setDropDownOpen( !dropDown )}> 
                             Get started
                         </button> 
                         {dropDown && (
-                            <div className="border border-neutral-700 shadow-lg rounded-xl p-4 mt-2">
+                            <div className="bg-neutral-800 rounded-lg py-3 px-3 mt-3">
                                 Search your stock here    
                             </div>
                         )}
