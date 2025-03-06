@@ -53,7 +53,7 @@ export const Dropdown = ({type, placeholder, onChange}: DropDownStocksProps) => 
         <input 
         type={ type } 
         placeholder={ placeholder }
-        className="border border-neutral-800 rounded-md py-3 px-3 mt-3 w-full bg-neutral-800" 
+        className="border border-neutral-800 rounded-md py-3 px-3 mt-3 w-full bg-neutral-800 text-neutral-300" 
         onChange={ onChange }
         >    
         </input>
