@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-
+ 
 const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
@@ -15,7 +15,6 @@ export async function POST(req: NextRequest) {
   if ( existingUser ) {
     return NextResponse.json({ error: "User already exists" }, { status: 400 });
   }
-
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const newUser = await prisma.user.create({
@@ -27,8 +26,8 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({
     user: newUser.email,
-    message: "User created successfully",
-    alert: "User Signed up successfully!"
+    message: "User created",
+    alert: "User Signed up!"
   }, { status: 200 });
 } catch(error: any){
   return NextResponse.json({
