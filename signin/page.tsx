@@ -44,7 +44,7 @@ export default function Home() {
     }
   };
 
-  const takeUserToSignup = () => {
+  const takeUserToSignin = () => {
     router.push("/signin")
   }
 
@@ -54,7 +54,7 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center font-light text-2xl p-6 text-gray-200">
         <div className="flex items-center space-x-2 text-white">
         <div className="bg-orange-500 rounded-full w-16 h-16 flex items-center justify-center text-lg mb-3">
-          <button onClick={ takeUserToSignup }>
+          <button onClick={ takeUserToSignin }>
             { userIdName }
           </button>
         </div>
@@ -161,3 +161,4 @@ export function Input({
     </div>
   );
 }
+
