@@ -48,6 +48,10 @@ export default function Home() {
     router.push("/signin")
   }
 
+  const takeUserToSignup = () => {
+    router.push("/signup")
+  }
+
   return (
     <div className="flex justify-center items-center bg-neutral-900 min-h-screen text-gray-200">
       <div className="rounded-lg shadow-xl w-96 bg-neutral-900 border border-neutral-800">
@@ -90,8 +94,15 @@ export default function Home() {
             Signin
           </button>
         </div>
-          <div className="flex justify-center items-center text-sm text-blue-600 ">
-            Haven't signed up yet? 
+          <div className="flex justify-center items-center text-sm ">
+            <div className="text-red-500">
+              Haven't signed up yet? 
+            </div>
+            <div className="text-red-500 hover:text-red-600 ml-1 cursor-pointer">
+              <button onClick={takeUserToSignup}>
+                Signup
+              </button>
+            </div>
           </div>
         {message && (
           <div className="flex justify-center items-center text-sm text-red-500 mb-6">
