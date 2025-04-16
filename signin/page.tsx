@@ -90,6 +90,9 @@ export default function Home() {
             Signin
           </button>
         </div>
+          <div className="flex justify-center items-center text-sm text-blue-600 ">
+            Haven't signed up yet? 
+          </div>
         {message && (
           <div className="flex justify-center items-center text-sm text-red-500 mb-6">
             { message }
@@ -161,4 +164,5 @@ export function Input({
     </div>
   );
 }
+
 
