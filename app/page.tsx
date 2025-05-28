@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ChangeEvent, useState } from "react";
@@ -31,7 +32,7 @@ export default function Home() {
           email: userId,
           password: password,
         });
-        if (response.status === 201) {
+        if (response.status === 200) {
           setMessage("User created successfully!");
           router.push("/signin");
         } else {
@@ -169,3 +170,4 @@ export function Input({
     </div>
   );
 }
+
