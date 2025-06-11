@@ -37,7 +37,7 @@ const Input = ({
           onChange={onChange}
         />
 
-        {showToggle && (
+        {showToggle && toggleVisibility && (
           <button
             type="button"
             onClick={toggleVisibility}
