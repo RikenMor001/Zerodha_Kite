@@ -19,11 +19,11 @@ export default function Orders() {
             <Recommendations />
           </div>
           <div>
-            <div className="text-white ml-5 font-semibold text-2xl border-b border-b-neutral-800 shadow-md p-">
+            <div className="text-white ml-5 font-semibold text-2xl border-b border-b-neutral-800 shadow-md p-2">
               Orders
             </div>
             <div className="text-gray-400 flex flex-col justify-center min-h-screen text-sm items-center">
-              <p>You haven't placed any orders today</p>
+              <p>You haven&apos;t placed any orders today</p>
               <button
                 className="mt-2 border border-black py-3 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white"
                 onClick={() => setDropDownOpen(!dropDown)}
@@ -35,7 +35,9 @@ export default function Orders() {
                   <Dropdown
                     type="text"
                     placeholder="Search a stock"
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => console.log(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      console.log(e.target.value)
+                    }
                   />
                 </div>
               )}
