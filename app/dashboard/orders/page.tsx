@@ -35,7 +35,7 @@ export default function Orders() {
                   <Dropdown
                     type="text"
                     placeholder="Search a stock"
-                    onChange={(e: any) => console.log(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => console.log(e.target.value)}
                   />
                 </div>
               )}
