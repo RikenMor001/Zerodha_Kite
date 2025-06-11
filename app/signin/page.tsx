@@ -92,7 +92,7 @@ export default function Home() {
           </button>
         </div>
         <div className="flex justify-center items-center text-sm ">
-          <div className="text-red-500">Haven't signed up yet?</div>
+          <div className="text-red-500">Haven&apos;t signed up yet?</div>
           <div className="text-red-500 hover:text-red-600 ml-1 cursor-pointer">
             <button onClick={takeUserToSignup}>Signup</button>
           </div>
