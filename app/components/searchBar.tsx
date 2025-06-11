@@ -11,7 +11,8 @@ export default function SearchBar(){
                 type="text"
                 onChange={(e) => setSearchBar(e.target.value)}
                 />
-        </div>        
+        </div>
+        <p className="text-sm text-neutral-400 mt-2"> You typed: {searchBar}</p>        
     </div>
 }
 
