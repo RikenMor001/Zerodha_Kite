@@ -44,3 +44,5 @@ const WebSocketData: React.FC = () => {
 
   </div>
 }
+
+export default WebSocketData;
