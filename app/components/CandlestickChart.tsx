@@ -23,9 +23,9 @@ const TradingViewWidget: React.FC<TradingViewWidgetProps> = ({
       script.src = 'https://s3.tradingview.com/tv.js';
       script.async = true;
       script.onload = () => {
-        // @ts-ignore
+          // @ts-expect-error: TradingView is a global script injected by tradingview.com
         if (window.TradingView) {
-          // @ts-ignore
+          // @ts-expect-error: TradingView is defined on window by the external script
           new window.TradingView.widget({
             autosize: true,
             symbol,
