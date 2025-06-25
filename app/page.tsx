@@ -1,132 +1,116 @@
 "use client";
 
-import { useState } from "react";
-import AppBar from "../components/appbar";
-import SearchBar from "../components/searchBar";
-import TradingViewWidget from '../components/CandlestickChart';
+import { useState, ChangeEvent } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import Input from "@/app/components/Input";
 
-const STOCKS = [
-  { symbol: "NSE:NIFTY", name: "NIFTY 50" },
-  { symbol: "BSE:SENSEX", name: "SENSEX" },
-  { symbol: "NSE:HDFCBANK", name: "HDFC Bank" },
-  { symbol: "NSE:ICICIBANK", name: "ICICI Bank" },
-  { symbol: "NSE:KOTAKBANK", name: "Kotak Bank" },
-  { symbol: "NSE:AXISBANK", name: "Axis Bank" },
-  { symbol: "NSE:SBIN", name: "SBI" },
-];
+export default function Home() {
+  const [userId, setUserId] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [togglePassword, setTogglePassword] = useState<boolean>(false);
+  const [errors, setErrors] = useState<{ userId: string; password: string }>({
+    userId: "",
+    password: "",
+  });
+  const [message, setMessage] = useState<string>("");
+  const userIdName = "RC";
+  const router = useRouter();
 
-export default function Dashboard() {
-  const [selectedSymbol, setSelectedSymbol] = useState<string>(STOCKS[0].symbol);
-  const [hoveredSymbol, setHoveredSymbol] = useState<string | null>(null);
-  const [showBuySell, setShowBuySell] = useState<string | null>(null);
-  const [orderType, setOrderType] = useState<'market' | 'limit'>('market');
-  const [orderQty, setOrderQty] = useState('');
-  const [limitPrice, setLimitPrice] = useState('');
+  const handleSignup = async () => {
+    const newErrors = {
+      userId: userId ? "" : "Please enter your User ID.",
+      password: password ? "" : "Please enter your Password.",
+    };
+    setErrors(newErrors);
+
+    if (!newErrors.userId && !newErrors.password) {
+      try {
+        const response = await axios.post("/api/signup", {
+          email: userId,
+          password: password,
+        });
+        if (response.status === 200) {
+          setMessage("User created successfully!");
+          router.push("/signin");
+        } else {
+          setMessage(response.data.error);
+        }
+      } catch (error) {
+        setMessage("An error occurred during signup.");
+        console.error("Signup error:", error);
+      }
+    }
+  };
+
+  const takeUserToSignup = () => {
+    router.push("/");
+  };
 
   return (
-    <div>
-      <AppBar />
-      <div className="min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-950 to-neutral-900">
-        <div className="grid grid-cols-[30%_70%] gap-4 p-4 min-h-screen">
-          <div className="border-r border-neutral-800 pr-6">
-            <SearchBar />
-            <div className="text-white font-semibold text-xs mt-5">
-              {STOCKS.map((stock) => (
-                <div
-                  key={stock.symbol}
-                  className={`mb-2 rounded-md border border-neutral-800 hover:border-orange-500 shadow-lg w-[90%] p-3 transition-all duration-200 relative group bg-neutral-900 ${selectedSymbol === stock.symbol ? 'ring-2 ring-orange-500' : ''}`}
-                  onMouseEnter={() => setHoveredSymbol(stock.symbol)}
-                  onMouseLeave={() => setHoveredSymbol(null)}
-                >
-                  <button
-                    className="w-full text-left"
-                    onClick={() => setSelectedSymbol(stock.symbol)}
-                  >
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-medium">{stock.name}</span>
-                        <span className="text-neutral-400 text-xs ml-2">({stock.symbol})</span>
-                      </div>
-                    </div>
-                  </button>
-                  {hoveredSymbol === stock.symbol && (
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2 z-10">
-                      <button
-                        className="px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded-lg text-xs font-semibold shadow"
-                        onClick={() => {
-                          setShowBuySell(stock.symbol + '-buy');
-                          setOrderType('market');
-                          setOrderQty('');
-                          setLimitPrice('');
-                        }}
-                      >Buy</button>
-                      <button
-                        className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-semibold shadow"
-                        onClick={() => {
-                          setShowBuySell(stock.symbol + '-sell');
-                          setOrderType('market');
-                          setOrderQty('');
-                          setLimitPrice('');
-                        }}
-                      >Sell</button>
-                    </div>
-                  )}
-                  {/* Modal for Buy/Sell with order type */}
-                  {(showBuySell === stock.symbol + '-buy' || showBuySell === stock.symbol + '-sell') && (
-                    <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 bg-neutral-800 border border-neutral-700 rounded-lg p-4 z-20 shadow-xl w-72">
-                      <div className="text-white font-bold mb-2">{showBuySell.endsWith('-buy') ? 'Buy' : 'Sell'} {stock.name}</div>
-                      <div className="mb-2 flex gap-2">
-                        <button
-                          className={`flex-1 py-1 rounded ${orderType === 'market' ? 'bg-orange-500 text-white' : 'bg-neutral-900 text-neutral-300 border border-neutral-700'}`}
-                          onClick={() => setOrderType('market')}
-                        >
-                          Market
-                        </button>
-                        <button
-                          className={`flex-1 py-1 rounded ${orderType === 'limit' ? 'bg-orange-500 text-white' : 'bg-neutral-900 text-neutral-300 border border-neutral-700'}`}
-                          onClick={() => setOrderType('limit')}
-                        >
-                          Limit
-                        </button>
-                      </div>
-                      <input
-                        className="w-full mb-2 p-2 rounded bg-neutral-900 border border-neutral-700 text-white"
-                        placeholder="Quantity"
-                        type="number"
-                        value={orderQty}
-                        onChange={e => setOrderQty(e.target.value)}
-                      />
-                      {orderType === 'limit' && (
-                        <input
-                          className="w-full mb-2 p-2 rounded bg-neutral-900 border border-neutral-700 text-white"
-                          placeholder="Limit Price"
-                          type="number"
-                          value={limitPrice}
-                          onChange={e => setLimitPrice(e.target.value)}
-                        />
-                      )}
-                      <button
-                        className={`w-full ${showBuySell.endsWith('-buy') ? 'bg-green-600 hover:bg-green-700' : 'bg-red-600 hover:bg-red-700'} text-white rounded-lg py-2 font-semibold mt-2`}
-                        onClick={() => setShowBuySell(null)}
-                      >
-                        Confirm {showBuySell.endsWith('-buy') ? 'Buy' : 'Sell'}
-                      </button>
-                      <button className="w-full mt-2 text-xs text-neutral-400 hover:underline" onClick={() => setShowBuySell(null)}>Cancel</button>
-                    </div>
-                  )}
-                </div>
-              ))}
+    <div className="flex justify-center items-center bg-neutral-900 min-h-screen text-gray-200">
+      <div className="rounded-lg shadow-xl w-96 bg-neutral-900 border border-neutral-800">
+        <div className="flex flex-col justify-center items-center font-light text-2xl p-6 text-gray-200">
+          <div className="flex items-center space-x-2 text-white">
+            <div className="bg-orange-500 rounded-full w-16 h-16 flex items-center justify-center text-lg mb-3">
+              <button onClick={takeUserToSignup}>{userIdName}</button>
             </div>
           </div>
-          <div className="flex-1 flex flex-col min-h-screen">
-            <div className="w-full h-[70vh]">
-              <TradingViewWidget 
-                symbol={selectedSymbol} 
-                interval="15" 
-                theme="dark" 
-                height={600} 
-              />
-            </div>
+          Signup to kite
+        </div>
+        <div>
+          <Input
+            placeholder="Phone or User ID"
+            type="text"
+            value={userId}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setUserId(e.target.value)
+            }
+            error={errors.userId}
+          />
+
+          <Input
+            placeholder="Password"
+            type={togglePassword ? "text" : "password"}
+            value={password}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setPassword(e.target.value)
+            }
+            error={errors.password}
+            showToggle
+            toggleVisibility={() => setTogglePassword((prev) => !prev)}
+            isVisible={togglePassword}
+          />
+        </div>
+        <div className="flex justify-center items-center p-4">
+          <button
+            className="w-80 bg-orange-500 text-white py-2 rounded hover:bg-orange-800 shadow-lg border-neutral-800"
+            onClick={handleSignup}
+          >
+            Signup
+          </button>
+        </div>
+        {message && (
+          <div className="flex justify-center items-center text-sm text-red-500 mb-6">
+            {message}
+          </div>
+        )}
+        <div className="flex justify-center items-center p-2">
+          <Image
+            src="https://cdn.brandfetch.io/idZmHUWU0C/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+            alt="Zerodha Logo"
+            className="h-4"
+            width={110}
+            height={10}
+          />
+        </div>
+        <div className="flex justify-center items-center text-xs text-gray-600">
+          <div className="w-[80%] mb-5">
+            Zerodha Broking Limited: Member of NSE, BSE ‐ SEBI Reg. no.
+            INZ000031633, CDSL ‐ SEBI Reg. no. IN-DP-431-2019 | Zerodha
+            Commodities Pvt. Ltd.: MCX ‐ SEBI Reg. no. INZ000038238 | Smart
+            Online Dispute Resolution | SEBI SCORES
           </div>
         </div>
       </div>
