@@ -3,6 +3,7 @@
 
 import AppBar from "@/app/components/appbar";
 import SearchBar from "@/app/components/searchBar";
+import { useState } from "react";
 
 const global_date = new Date();
 
@@ -73,7 +74,7 @@ const MOCK_ORDERS = [{
   sllipage: 12.00,
   timeStamp: global_date,
   taxes: 2.00,
-  totalAmount: 1340000.50,
+  totalAmount: 13.50,
   quantity: 10,
   status: "COMPLETED"
 }, 
@@ -94,6 +95,20 @@ const STOCKS = [
 ];
 
 export default function Orders() {
+
+  const getStatusColor = (status: OrderStatus) => {
+    switch(status) {
+      case "COMPLETED":
+        return "text-green-500 bg-green-500/10 border-green-500/20";
+      case "PENDING":
+        return "text-neutral-500 bg-neutral-500/10 border-neutral-500/20";
+      case "CANCELLED":
+        return "text-red-500 bg-red-500/10 border-red-500/20";
+    }
+  }
+
+  
+
   return (
     <div>
       <AppBar />
