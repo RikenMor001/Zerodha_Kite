@@ -20,7 +20,68 @@ const MOCK_ORDERS = [{
   totalAmount: 20000.50,
   quantity: 10,
   status: "COMPLETED"
-}]
+},{
+  id: "ORD002",
+  symbol: "NSE:ICICIBANK",
+  name: "ICICI BANK",
+  price: 1700.50,
+  executedPrice: 1700.55,
+  type: "MARKET",
+  brokerage: 20.00,
+  sllipage: 5.00,
+  timeStamp: global_date,
+  taxes: 2.00,
+  totalAmount: 20000.50,
+  quantity: 14,
+  status: "PENDING"
+},{
+  id: "ORD003",
+  symbol: "NSE:AXISBANK",
+  name: "AXIS BANK",
+  price: 1349.90,
+  executedPrice: 1350,
+  type: "MARKET",
+  brokerage: 20.00,
+  sllipage: 5.00,
+  timeStamp: global_date,
+  taxes: 2.00,
+  totalAmount: 20000.50,
+  quantity: 17,
+  status: "CANCELLED"
+},{
+  id: "ORD004",
+  symbol: "NSE:RELIANCE",
+  name: "RELIANCE",
+  price: 2300.00,
+  executedPrice: 2300,
+  type: "MARKET",
+  brokerage: 20.00,
+  sllipage: 5.00,
+  timeStamp: global_date,
+  taxes: 2.00,
+  totalAmount: 30000.60,
+  quantity: 30,
+  status: "COMPLETED"
+},{
+  id: "ORD005",
+  symbol: "NSE:MRF",
+  name: "HDFC BANK",
+  price: 134000.50,
+  executedPrice: 1340001,
+  type: "MARKET",
+  brokerage: 100.00,
+  sllipage: 12.00,
+  timeStamp: global_date,
+  taxes: 2.00,
+  totalAmount: 1340000.50,
+  quantity: 10,
+  status: "COMPLETED"
+}, 
+]
+
+type OrderStatus = "COMPLETED" | "PENDING" | "CANCELLED";
+type MarketType = "BUY" | "SELL";
+type OrderType = "MARKET" | "LIMIT";
 
 const STOCKS = [
   { symbol: "NSE:NIFTY", name: "NIFTY 50" },
