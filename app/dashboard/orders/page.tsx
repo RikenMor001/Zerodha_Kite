@@ -96,6 +96,9 @@ const STOCKS = [
 
 export default function Orders() {
 
+  const [statusType, setStatusType] = useState<OrderStatus | "ALL">("ALL");
+  
+
   const getStatusColor = (status: OrderStatus) => {
     switch(status) {
       case "COMPLETED":
@@ -107,7 +110,23 @@ export default function Orders() {
     }
   }
 
-  
+  const getMarketTypeColor = (status: MarketType) => {
+    switch (status) {
+      case "BUY":
+        return "text-green-700 bg-green-700/10 border-green-700/20"
+      case "SELL":
+        return "text-red-700 bg-red-700/10 border-red-700/20"
+    }
+  }
+
+  const getOrderTypeColor = (status: OrderType) => {
+    switch(status){
+      case "MARKET":
+        return "text-orange-500 bg-orange-500/10 border-orange-500/20"
+      case "LIMIT":
+        return "text-neutral-500 bg-neutral-500/10 border-neutral-500/20"
+    }
+  }
 
   return (
     <div>
@@ -137,7 +156,6 @@ export default function Orders() {
               Orders
             </div>
             <div className="text-white flex justify-center items-center min-h-[60vh]">
-              
             </div>
           </div>
         </div>
