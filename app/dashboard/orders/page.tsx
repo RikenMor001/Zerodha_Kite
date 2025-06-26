@@ -1,7 +1,26 @@
-"use client";
+
+"use client"
 
 import AppBar from "@/app/components/appbar";
 import SearchBar from "@/app/components/searchBar";
+
+const global_date = new Date();
+
+const MOCK_ORDERS = [{
+  id: "ORD001",
+  symbol: "NSE:HDFCBANK",
+  name: "HDFC BANK",
+  price: 1950.50,
+  executedPrice: 1951,
+  type: "MARKET",
+  brokerage: 20.00,
+  sllipage: 5.00,
+  timeStamp: global_date,
+  taxes: 2.00,
+  totalAmount: 20000.50,
+  quantity: 10,
+  status: "COMPLETED"
+}]
 
 const STOCKS = [
   { symbol: "NSE:NIFTY", name: "NIFTY 50" },
@@ -42,7 +61,7 @@ export default function Orders() {
               Orders
             </div>
             <div className="text-white flex justify-center items-center min-h-[60vh]">
-              Orders page content here
+              
             </div>
           </div>
         </div>
