@@ -97,7 +97,8 @@ const STOCKS = [
 export default function Orders() {
 
   const [statusType, setStatusType] = useState<OrderStatus | "ALL">("ALL");
-  
+  const [selectedType, setSelectedType] = useState<MarketType | "ALL">("ALL"); 
+  const [orderType, setOrderType] = useState<OrderType | "ALL">("ALL")
 
   const getStatusColor = (status: OrderStatus) => {
     switch(status) {
