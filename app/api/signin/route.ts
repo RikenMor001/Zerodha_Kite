@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     }
 
     const user = await prisma.user.findUnique({
-      where: { email }
+      where: { email: email }
     });
 
     if (!user) {
@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // compare the hashed password
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
     if (!isPasswordCorrect) {
       return NextResponse.json(
